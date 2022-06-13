@@ -57,7 +57,18 @@ return packer.startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'shaunsingh/nord.nvim'
-
+  use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
+    require("toggleterm").setup()
+  end}
+  use {
+    "kyazdani42/nvim-tree.lua",
+    requires = {
+      "kyazdani42/nvim-web-devicons"
+    },
+    commit = "0f0f858348aacc94f98ba32880760c5a5440b825"
+  }
+  -- Personal Org
+  use 'jbyuki/nabla.nvim'
 -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
